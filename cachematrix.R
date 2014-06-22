@@ -20,8 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 #test the makeCacheMatrix functions
+## I test using the simplest square matrix a 2X2 with values 1:4
 v <- makeCacheMatrix()
-v$set(matrix(data=1:4, 	nrow = 2, 	ncol = 2, 	byrow = F))
+v$set(matrix(data=1:4, 	nrow = 2, ncol = 2, byrow = F))
 v$get()
 
 
