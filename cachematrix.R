@@ -1,9 +1,5 @@
-## Put comments here that give an overall description of what your
-## Put comments here that give an overall description of what your
-## functions do
-
-
 ## this function initialies the globals that shall be used to compute the inverse of the matrix
+# The matrix has to be square and invertible for the solve function to work
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
