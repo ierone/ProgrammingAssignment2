@@ -1,15 +1,58 @@
 ## Put comments here that give an overall description of what your
+## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+
+## this function initialies the globals that shall be used to compute the inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  m <- NULL
+  set <- function(y) {
+    x <<- y
+    m <<- NULL
+  }
+  get <- function() x
+  setSolve <- function(solve) m <<- solve
+  getSolve <- function() m
+  list(set = set, 
+       get = get,
+       setSolve = setSolve,
+       getSolve = getSolve)
 }
 
+#test the makeCacheMatrix functions
+v <- makeCacheMatrix()
+v$set(matrix(data=1:4, 	nrow = 2, 	ncol = 2, 	byrow = F))
+v$get()
 
-## Write a short comment describing this function
+
+
+
+
+## the cacheSolve function is supposed to check if the inverse of
+## matrix is already computed else it computes it and returns its inverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+m <- x$getSolve()
+  if(!is.null(m)) {
+    message("getting cached inverse of the matrix")
+    return(m)
+  }
+
+  data <- x$get()
+  m <- solve(data, ...)
+  x$setSolve(m)
+  m
+
 }
+
+
+## test cacheSolve function
+cacheSolve(v)
+
+
+##check if it reads from cache again
+cacheSolve(v)
+
+
