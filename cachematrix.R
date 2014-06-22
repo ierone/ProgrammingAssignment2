@@ -23,8 +23,6 @@ v$get()
 
 
 
-
-
 ## the cacheSolve function is supposed to check if the inverse of
 ## matrix is already computed else it computes it and returns its inverse
 
