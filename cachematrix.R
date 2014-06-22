@@ -1,5 +1,8 @@
 ## this function initialies the globals that shall be used to compute the inverse of the matrix
-# The matrix has to be square and invertible for the solve function to work
+## In these functions I do not consider the fundamental rules that have to be passed for solve() to work.
+## 1. - the tatrix has to be square
+## 2. - the matrix has to be invertible
+## This is left at the discresion of the user.
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
